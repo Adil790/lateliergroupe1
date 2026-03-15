@@ -42,22 +42,40 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Image */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="flex-1 relative w-full lg:max-w-lg mx-auto"
-          >
-            <div className="aspect-[4/5] w-full transform -rotate-2 overflow-hidden shadow-sm">
-              <img
-                src={`${import.meta.env.BASE_URL}images/about-spa.png`}
-                alt="Spa and Wellness setup"
-                className="w-full h-full object-cover scale-105"
-              />
-            </div>
-          </motion.div>
+          {/* Images */}
+          <div className="flex-1 relative w-full lg:max-w-lg mx-auto flex flex-col pt-10 lg:pt-0">
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="relative w-4/5 ml-auto"
+            >
+              <div className="aspect-[3/4] w-full transform -rotate-2 overflow-hidden shadow-xl rounded-lg">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/about-spa.png`}
+                  alt="Spa and Wellness setup"
+                  className="w-full h-full object-cover scale-105"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              className="relative w-4/5 mr-auto -mt-16 sm:-mt-24 md:-mt-32 z-10"
+            >
+              <div className="aspect-[3/4] w-full transform rotate-1 overflow-hidden shadow-xl rounded-lg border-4 border-background">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/gallery-1.png`}
+                  alt="Hairstylist at work"
+                  className="w-full h-full object-cover scale-105"
+                />
+              </div>
+            </motion.div>
+          </div>
 
         </div>
       </div>
