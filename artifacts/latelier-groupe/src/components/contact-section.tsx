@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Phone, Clock, MapPin } from "lucide-react";
 
-const WHATSAPP_NUMBER = "33681032037";
+const WHATSAPP_NUMBER = "212681032037";
 const WHATSAPP_MESSAGE = encodeURIComponent("Bonjour, je souhaite prendre rendez-vous chez L'Atelier Groupe.");
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
@@ -26,7 +26,7 @@ export function ContactSection() {
             <div className="space-y-12">
               <div>
                 <a
-                  href="tel:0681032037"
+                  href="tel:+212681032037"
                   className="flex items-center gap-3 text-3xl md:text-4xl font-sans font-bold tracking-tight text-foreground hover:text-primary transition-colors"
                 >
                   <Phone className="w-7 h-7 shrink-0" />

@@ -97,7 +97,7 @@ export function Hero() {
               size="lg"
               className="w-full sm:w-auto text-xs py-7 px-10 rounded-full uppercase tracking-widest font-bold bg-white text-black hover:bg-white/90 transition-all duration-300"
             >
-              <a href="https://wa.me/33681032037?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous%20chez%20L'Atelier%20Groupe." target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/212681032037?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous%20chez%20L'Atelier%20Groupe." target="_blank" rel="noopener noreferrer">
                 Prendre Rendez-vous
               </a>
             </Button>
@@ -108,7 +108,7 @@ export function Hero() {
               size="lg"
               className="w-full sm:w-auto text-xs py-7 px-10 rounded-full uppercase tracking-widest font-bold border-white/50 text-white hover:bg-white hover:text-black bg-transparent transition-all duration-300"
             >
-              <a href="tel:0681032037">
+              <a href="tel:+212681032037">
                 Nous Appeler
               </a>
             </Button>

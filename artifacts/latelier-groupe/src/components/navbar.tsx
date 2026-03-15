@@ -63,7 +63,7 @@ export function Navbar() {
                 : "border-border text-foreground hover:bg-foreground hover:text-background"
             }`}
           >
-            <a href="tel:0681032037">
+            <a href="tel:+212681032037">
               06 81 03 20 37
             </a>
           </Button>
@@ -97,7 +97,7 @@ export function Navbar() {
             </a>
           ))}
           <Button asChild className="w-full mt-4 py-6 text-xs font-bold tracking-widest uppercase rounded-full">
-            <a href="tel:0681032037">
+            <a href="tel:+212681032037">
               06 81 03 20 37
             </a>
           </Button>
