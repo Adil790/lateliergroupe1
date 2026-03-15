@@ -49,9 +49,7 @@ export function ContactSection() {
                   <Clock className="w-4 h-4" /> HORAIRES
                 </h4>
                 <ul className="text-foreground font-medium text-lg space-y-2">
-                  <li className="flex justify-between w-full max-w-[280px]"><span>Lun - Ven</span><span>09:00 - 20:00</span></li>
-                  <li className="flex justify-between w-full max-w-[280px]"><span>Samedi</span><span>09:00 - 18:00</span></li>
-                  <li className="flex justify-between w-full max-w-[280px] text-muted-foreground"><span>Dimanche</span><span>Fermé</span></li>
+                  <li className="flex justify-between w-full max-w-[280px]"><span>Lun - Dim</span><span>10:00 - 22:00</span></li>
                 </ul>
               </div>
             </div>
