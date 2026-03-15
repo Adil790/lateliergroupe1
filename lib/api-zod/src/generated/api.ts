@@ -14,3 +14,21 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Submits a contact/booking request form
+ * @summary Submit contact form
+ */
+
+export const SubmitContactBody = zod.object({
+  name: zod.string().min(1),
+  email: zod.string().email(),
+  phone: zod.string().optional(),
+  service: zod.string(),
+  message: zod.string().optional(),
+});
+
+export const SubmitContactResponse = zod.object({
+  success: zod.boolean(),
+  message: zod.string(),
+});
