@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
@@ -25,26 +25,26 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-md shadow-sm py-4"
+          ? "bg-background border-b border-border/50 py-4"
           : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <span className={`text-2xl md:text-3xl font-serif font-semibold tracking-wide transition-colors ${isScrolled ? "text-foreground" : "text-white drop-shadow-md"}`}>
-            L'Atelier <span className="text-primary italic">Groupe</span>
+          <span className={`text-xl md:text-2xl font-sans font-bold tracking-tighter uppercase transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}>
+            L'Atelier Groupe
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-12">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium uppercase tracking-widest hover:text-primary transition-colors ${
-                isScrolled ? "text-foreground/80" : "text-white/90 drop-shadow-sm hover:text-white"
+              className={`text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
+                isScrolled ? "text-foreground hover:text-primary" : "text-white/80 hover:text-white"
               }`}
             >
               {link.name}
@@ -56,12 +56,14 @@ export function Navbar() {
         <div className="hidden md:block">
           <Button
             asChild
-            className={`rounded-sm font-medium tracking-wide uppercase px-6 py-5 shadow-lg hover:-translate-y-0.5 transition-all duration-300 ${
-              !isScrolled ? "bg-white text-foreground hover:bg-white/90" : ""
+            variant="outline"
+            className={`rounded-full font-semibold text-xs tracking-widest uppercase px-6 py-5 transition-all duration-300 ${
+              !isScrolled 
+                ? "border-white/50 text-white hover:bg-white hover:text-black bg-transparent" 
+                : "border-border text-foreground hover:bg-foreground hover:text-background"
             }`}
           >
             <a href="tel:0681032037">
-              <PhoneCall className="w-4 h-4 mr-2" />
               06 81 03 20 37
             </a>
           </Button>
@@ -79,24 +81,23 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       <div
-        className={`absolute top-full left-0 w-full bg-background border-b shadow-xl transition-all duration-300 overflow-hidden md:hidden ${
-          mobileMenuOpen ? "max-h-[400px] py-4" : "max-h-0 py-0 border-transparent"
+        className={`absolute top-full left-0 w-full bg-background border-b border-border/50 transition-all duration-300 overflow-hidden md:hidden ${
+          mobileMenuOpen ? "max-h-[400px] py-6" : "max-h-0 py-0 border-transparent"
         }`}
       >
-        <div className="flex flex-col items-center gap-6 px-4">
+        <div className="flex flex-col items-center gap-8 px-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-foreground/80 hover:text-primary font-medium text-lg uppercase tracking-wider w-full text-center py-2 border-b border-border/50"
+              className="text-foreground hover:text-primary font-bold text-sm uppercase tracking-[0.2em] w-full text-center"
             >
               {link.name}
             </a>
           ))}
-          <Button asChild className="w-full mt-2 py-6 text-lg rounded-sm bg-primary text-primary-foreground">
+          <Button asChild className="w-full mt-4 py-6 text-xs font-bold tracking-widest uppercase rounded-full">
             <a href="tel:0681032037">
-              <PhoneCall className="w-5 h-5 mr-2" />
               06 81 03 20 37
             </a>
           </Button>

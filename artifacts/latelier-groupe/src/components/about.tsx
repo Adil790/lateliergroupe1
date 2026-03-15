@@ -2,74 +2,61 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-secondary/30 relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 bg-secondary relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           {/* Text Content */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex-1 space-y-8"
+            className="flex-1 space-y-12 lg:py-10"
           >
             <div>
-              <span className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4 block">
-                Notre Histoire
-              </span>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-                Notre passion, <br/>
-                <span className="italic font-light">votre beauté.</span>
+              <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-tighter text-foreground uppercase leading-[0.9]">
+                NOTRE PASSION,<br/>VOTRE BEAUTÉ.
               </h2>
             </div>
             
-            <div className="space-y-6 text-muted-foreground font-light text-lg leading-relaxed">
+            <div className="space-y-6 text-foreground font-sans font-medium text-base md:text-lg leading-relaxed max-w-xl">
               <p>
                 Chez L'Atelier Groupe, nous croyons que chaque individu possède une beauté unique qui ne demande qu'à être révélée. Fondé sur l'exigence et le raffinement, notre salon est un véritable havre de paix où le temps suspend son vol.
               </p>
-              <p>
+              <p className="text-muted-foreground">
                 Nos experts, constamment formés aux dernières techniques, vous offrent une écoute attentive et des conseils personnalisés. Que vous souhaitiez raviver votre coupe, vous offrir un moment de pure détente au spa, ou parfaire votre style, nous mettons notre savoir-faire au service de vos envies.
               </p>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+            <div className="flex gap-12 pt-8">
               <div>
-                <h4 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-1">15<span className="text-primary">+</span></h4>
-                <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Années<br/>d'expertise</p>
+                <h4 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter text-foreground mb-2">15<span className="text-primary">+</span></h4>
+                <p className="text-xs text-muted-foreground font-bold uppercase tracking-[0.15em]">Années<br/>d'expertise</p>
               </div>
               <div>
-                <h4 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-1">5<span className="text-primary">k</span></h4>
-                <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Clients<br/>satisfaits</p>
-              </div>
-              <div>
-                <h4 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-1">8</h4>
-                <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Experts<br/>passionnés</p>
+                <h4 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter text-foreground mb-2">5<span className="text-primary">k</span></h4>
+                <p className="text-xs text-muted-foreground font-bold uppercase tracking-[0.15em]">Clients<br/>satisfaits</p>
               </div>
             </div>
           </motion.div>
 
           {/* Image */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="flex-1 relative w-full"
+            className="flex-1 relative w-full lg:max-w-lg mx-auto"
           >
-            <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:max-w-none rounded-sm overflow-hidden shadow-2xl">
+            <div className="aspect-[4/5] w-full transform -rotate-2 overflow-hidden shadow-sm">
               <img
                 src={`${import.meta.env.BASE_URL}images/about-spa.png`}
                 alt="Spa and Wellness setup"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover scale-105"
               />
-              <div className="absolute inset-0 border-[10px] border-background/20 mix-blend-overlay"></div>
             </div>
-            
-            {/* Decorative block */}
-            <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-primary/10 rounded-sm -z-10 hidden md:block" />
-            <div className="absolute -top-8 -right-8 w-48 h-48 bg-primary/5 rounded-sm -z-10 hidden md:block" />
           </motion.div>
 
         </div>
