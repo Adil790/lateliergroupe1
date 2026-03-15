@@ -3,55 +3,64 @@ import { motion } from "framer-motion";
 const servicesList = [
   {
     num: "01",
-    title: "COIFFURE FEMME",
-    description: "Coupes tendances, brushing, soins profonds. Révélez la beauté naturelle de vos cheveux avec nos experts visagistes."
+    title: "Coiffure Femme El Jadida",
+    description: "Coupes tendances, brushing, soins profonds à El Jadida. Révélez la beauté naturelle de vos cheveux avec nos experts visagistes."
   },
   {
     num: "02",
-    title: "COIFFURE HOMME & BARBIER",
-    description: "Taille de barbe précise, dégradés, soins spécifiques. Un entretien impeccable pour le gentleman moderne."
+    title: "Coiffeur Homme & Barbier El Jadida",
+    description: "Taille de barbe précise, dégradés, soins spécifiques à El Jadida. Un entretien impeccable pour le gentleman moderne."
   },
   {
     num: "03",
-    title: "COLORATION & MÈCHES",
-    description: "Balayage, ombré hair, coloration sans ammoniaque. Des nuances sur-mesure pour sublimer votre teint."
+    title: "Coloration & Mèches",
+    description: "Balayage, ombré hair, coloration sans ammoniaque. Des nuances sur-mesure pour sublimer votre teint à El Jadida."
   },
   {
     num: "04",
-    title: "SOINS VISAGE",
-    description: "Soins anti-âge, hydratation profonde, pureté. Une peau éclatante grâce à nos protocoles de soin premium."
+    title: "Soin Visage El Jadida",
+    description: "Soins anti-âge, hydratation profonde, pureté. Une peau éclatante grâce à nos protocoles de soin premium à El Jadida."
   },
   {
     num: "05",
-    title: "MASSAGES & SPA",
-    description: "Détente absolue, modelages relaxants, rituels évasion. Lâchez prise entre les mains de nos praticiennes."
+    title: "Massage & Spa El Jadida",
+    description: "Hammam, modelages relaxants, rituels évasion à El Jadida. Lâchez prise entre les mains de nos praticiennes expertes."
   },
   {
     num: "06",
-    title: "MANUCURE & BEAUTÉ",
-    description: "Soin des mains et pieds, vernis semi-permanent, beauté du regard. Les détails qui font la perfection."
+    title: "Manucure & Beauté",
+    description: "Soin des mains et pieds, vernis semi-permanent, beauté du regard à El Jadida. Les détails qui font la perfection."
   }
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-background">
+    <section id="services" className="py-24 md:py-32 bg-background" aria-label="Nos services à El Jadida">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-4xl mb-20 md:mb-32">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-6xl lg:text-7xl font-sans font-bold tracking-tighter text-foreground uppercase"
           >
-            L'ART DE PRENDRE SOIN DE VOUS
+            Coiffeur & Spa à El Jadida
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-6 text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed"
+          >
+            L'Atelier Groupe vous propose une gamme complète de soins beauté à El Jadida — coiffure, spa, hammam, massage et bien plus. Ouvert 7j/7.
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-16">
           {servicesList.map((service, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
               whileInView={{ opacity: 1, x: 0 }}

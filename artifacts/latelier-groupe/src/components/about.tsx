@@ -16,16 +16,16 @@ export function About() {
           >
             <div>
               <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-tighter text-foreground uppercase leading-[0.9]">
-                NOTRE PASSION,<br/>VOTRE BEAUTÉ.
+                Le meilleur salon de beauté à El Jadida
               </h2>
             </div>
-            
+
             <div className="space-y-6 text-foreground font-sans font-medium text-base md:text-lg leading-relaxed max-w-xl">
               <p>
-                Chez L'Atelier Groupe, nous croyons que chaque individu possède une beauté unique qui ne demande qu'à être révélée. Fondé sur l'exigence et le raffinement, notre salon est un véritable havre de paix où le temps suspend son vol.
+                Chez L'Atelier Groupe à El Jadida, nous croyons que chaque individu possède une beauté unique qui ne demande qu'à être révélée. Fondé sur l'exigence et le raffinement, notre salon coiffure et spa est un véritable havre de paix au cœur d'El Jadida.
               </p>
               <p className="text-muted-foreground">
-                Nos experts, constamment formés aux dernières techniques, vous offrent une écoute attentive et des conseils personnalisés. Que vous souhaitiez raviver votre coupe, vous offrir un moment de pure détente au spa, ou parfaire votre style, nous mettons notre savoir-faire au service de vos envies.
+                Nos experts en coiffure homme, coiffure femme, hammam et massage à El Jadida, constamment formés aux dernières techniques, vous offrent une écoute attentive et des conseils personnalisés. Le meilleur coiffeur et spa d'El Jadida, ouvert 7j/7.
               </p>
             </div>
 
@@ -54,7 +54,7 @@ export function About() {
               <div className="aspect-[3/4] w-full transform -rotate-2 overflow-hidden shadow-xl rounded-lg">
                 <img
                   src={`${import.meta.env.BASE_URL}images/about-spa.png`}
-                  alt="Spa and Wellness setup"
+                  alt="Spa et hammam à El Jadida - L'Atelier Groupe salon beauté"
                   className="w-full h-full object-cover scale-105"
                 />
               </div>

@@ -36,7 +36,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-          alt="L'Atelier Groupe Interior"
+          alt="Salon de coiffure et spa L'Atelier Groupe à El Jadida"
           className="w-full h-full object-cover object-center scale-105"
         />
         {/* Lighter, minimal overlay */}
@@ -81,8 +81,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 1 }}
             className="text-sm md:text-base text-white/80 max-w-xl mx-auto font-sans font-medium tracking-wide leading-relaxed mb-12"
           >
-            UN ESPACE DÉDIÉ À LA COIFFURE, AUX SOINS ET AU BIEN-ÊTRE. 
-            DÉCOUVREZ UNE EXPÉRIENCE PREMIUM SUR-MESURE.
+            VOTRE COIFFEUR & SPA À EL JADIDA — COIFFURE HOMME, FEMME, MASSAGE & HAMMAM. OUVERT 7J/7.
           </motion.p>
 
           <motion.div 
