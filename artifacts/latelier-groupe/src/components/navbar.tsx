@@ -1,18 +1,32 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark") {
+      document.documentElement.classList.add("dark");
+      setIsDark(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleDark = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   const navLinks = [
     { name: "Services", href: "#services" },
@@ -20,6 +34,8 @@ export function Navbar() {
     { name: "Témoignages", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const textColor = isScrolled ? "text-foreground" : "text-white";
 
   return (
     <header
@@ -31,8 +47,8 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <span className={`text-xl md:text-2xl font-sans font-bold tracking-tighter uppercase transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}>
+        <a href="#" className="flex items-center gap-2">
+          <span className={`text-xl md:text-2xl font-sans font-bold tracking-tighter uppercase transition-colors ${textColor}`}>
             L'Atelier Groupe
           </span>
         </a>
@@ -52,14 +68,26 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
+        {/* Right side: dark toggle + phone CTA */}
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={toggleDark}
+            aria-label="Toggle dark mode"
+            className={`p-2 rounded-full transition-colors ${
+              isScrolled
+                ? "text-foreground hover:bg-secondary"
+                : "text-white/80 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
           <Button
             asChild
             variant="outline"
             className={`rounded-full font-semibold text-xs tracking-widest uppercase px-6 py-5 transition-all duration-300 ${
-              !isScrolled 
-                ? "border-white/50 text-white hover:bg-white hover:text-black bg-transparent" 
+              !isScrolled
+                ? "border-white/50 text-white hover:bg-white hover:text-black bg-transparent"
                 : "border-border text-foreground hover:bg-foreground hover:text-background"
             }`}
           >
@@ -69,14 +97,23 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className={`md:hidden p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile: dark toggle + hamburger */}
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggleDark}
+            aria-label="Toggle dark mode"
+            className={`p-2 ${textColor}`}
+          >
+            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            className={`p-2 ${textColor}`}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
