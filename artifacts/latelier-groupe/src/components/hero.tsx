@@ -69,7 +69,7 @@ export function Hero() {
               <motion.span
                 variants={child}
                 key={index}
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-sans font-bold tracking-tighter leading-[0.85] uppercase"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold tracking-tighter leading-[0.9] uppercase"
               >
                 {word}
               </motion.span>
