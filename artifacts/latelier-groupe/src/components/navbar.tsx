@@ -71,7 +71,7 @@ export function Navbar() {
         {/* Right side: instagram + dark toggle + phone CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://www.instagram.com/lateliervip1/"
+            href="https://www.instagram.com/latelier_by_mamy"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram L'Atelier Groupe"
@@ -147,7 +147,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="https://www.instagram.com/lateliervip1/"
+            href="https://www.instagram.com/latelier_by_mamy"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-foreground hover:text-primary font-bold text-sm uppercase tracking-[0.2em]"

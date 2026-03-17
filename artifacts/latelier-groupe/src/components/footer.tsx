@@ -28,9 +28,9 @@ export function Footer() {
                 <p>El Jadida, Maroc</p>
                 <a href="tel:+212681032037" className="hover:text-primary transition-colors block">+212 6 81 03 20 37</a>
                 <a href="https://wa.me/212681032037" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors block">WhatsApp</a>
-                <a href="https://www.instagram.com/lateliervip1/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2 mt-1">
+                <a href="https://www.instagram.com/latelier_by_mamy" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2 mt-1">
                   <Instagram size={14} />
-                  @lateliervip1
+                  @latelier_by_mamy
                 </a>
               </address>
               <p className="text-xs text-muted-foreground mt-4">
