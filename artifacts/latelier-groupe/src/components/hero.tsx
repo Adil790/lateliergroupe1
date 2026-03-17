@@ -39,9 +39,9 @@ export function Hero() {
           alt="Salon de coiffure et spa L'Atelier Groupe à El Jadida"
           className="w-full h-full object-cover object-center scale-105"
         />
-        {/* Lighter, minimal overlay */}
-        <div className="absolute inset-0 bg-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+        <div className="absolute inset-0 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </div>
 
       {/* Content */}
