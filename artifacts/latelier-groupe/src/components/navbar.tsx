@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
@@ -68,8 +68,21 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Right side: dark toggle + phone CTA */}
+        {/* Right side: instagram + dark toggle + phone CTA */}
         <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://www.instagram.com/lateliervip1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram L'Atelier Groupe"
+            className={`p-2 rounded-full transition-colors ${
+              isScrolled
+                ? "text-foreground hover:bg-secondary"
+                : "text-white/80 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            <Instagram size={18} />
+          </a>
           <button
             onClick={toggleDark}
             aria-label="Toggle dark mode"
@@ -133,6 +146,15 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
+          <a
+            href="https://www.instagram.com/lateliervip1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-foreground hover:text-primary font-bold text-sm uppercase tracking-[0.2em]"
+          >
+            <Instagram size={16} />
+            Instagram
+          </a>
           <Button asChild className="w-full mt-4 py-6 text-xs font-bold tracking-widest uppercase rounded-full">
             <a href="tel:+212681032037">
               06 81 03 20 37
