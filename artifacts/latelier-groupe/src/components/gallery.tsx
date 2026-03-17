@@ -20,6 +20,14 @@ export function Gallery() {
       src: `${import.meta.env.BASE_URL}images/photo-2.jpg`,
       alt: "Entrée du salon L'Atelier Groupe à El Jadida",
     },
+    {
+      src: `${import.meta.env.BASE_URL}images/photo-5.jpg`,
+      alt: "Hammam luxe à El Jadida - L'Atelier Groupe spa",
+    },
+    {
+      src: `${import.meta.env.BASE_URL}images/photo-6.jpg`,
+      alt: "Nail bar et manucure à El Jadida - L'Atelier Groupe",
+    },
   ];
 
   const scrollRef = useRef<HTMLDivElement>(null);
