@@ -6,6 +6,7 @@ import { Gallery } from "@/components/gallery";
 import { Testimonials } from "@/components/testimonials";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { InstagramSection } from "@/components/instagram-section";
 import { FloatingActionButton } from "@/components/floating-action-button";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Services />
         <About />
         <Gallery />
+        <InstagramSection />
         <Testimonials />
         <ContactSection />
       </main>
