@@ -147,3 +147,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Hide scrollbar on carousel */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
