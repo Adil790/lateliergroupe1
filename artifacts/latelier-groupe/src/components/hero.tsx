@@ -35,7 +35,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
+          src={`${import.meta.env.BASE_URL}images/hero-bg.jpg`}
           alt="Salon de coiffure et spa L'Atelier Groupe à El Jadida"
           className="w-full h-full object-cover object-center scale-105"
         />
