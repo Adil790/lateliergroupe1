@@ -50,10 +50,10 @@ export function About() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="flex-1 w-full lg:max-w-lg mx-auto pt-10 lg:pt-0"
           >
-            <div className="aspect-[4/3] w-full overflow-hidden shadow-2xl rounded-lg">
+            <div className="aspect-[3/4] w-full overflow-hidden shadow-2xl rounded-lg">
               <img
-                src={`${import.meta.env.BASE_URL}images/about-salon.jpg`}
-                alt="Intérieur du salon L'Atelier Groupe à El Jadida - coiffeur barbier"
+                src={`${import.meta.env.BASE_URL}images/photo-2.jpg`}
+                alt="Façade du salon L'Atelier Groupe à El Jadida"
                 className="w-full h-full object-cover"
               />
             </div>
