@@ -5,91 +5,114 @@ const WHATSAPP_NUMBER = "212681032037";
 const WHATSAPP_MESSAGE = encodeURIComponent("Bonjour, je souhaite prendre rendez-vous chez L'Atelier Groupe.");
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
+const info = [
+  {
+    icon: Phone,
+    label: "Téléphone",
+    value: "06 81 03 20 37",
+    href: "tel:+212681032037",
+  },
+  {
+    icon: MapPin,
+    label: "Adresse",
+    value: "El Jadida, Maroc",
+    href: null,
+  },
+  {
+    icon: Clock,
+    label: "Horaires",
+    value: "Lun – Dim · 10:00 – 22:00",
+    href: null,
+  },
+];
+
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
+    <section id="contact" className="bg-background" aria-label="Contact et réservation">
 
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 lg:max-w-md"
-          >
-            <h2 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter uppercase text-foreground mb-8 leading-[0.9]">
-              CONTACT & ACCÈS
-            </h2>
-
-            <div className="space-y-12">
-              <div>
-                <a
-                  href="tel:+212681032037"
-                  className="flex items-center gap-3 text-3xl md:text-4xl font-sans font-bold tracking-tight text-foreground hover:text-primary transition-colors"
-                >
-                  <Phone className="w-7 h-7 shrink-0" />
-                  06 81 03 20 37
-                </a>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 flex items-center gap-2">
-                  <MapPin className="w-4 h-4" /> ADRESSE
-                </h4>
-                <p className="text-foreground text-lg font-medium">
-                  123 Avenue de l'Excellence<br />
-                  75008 Paris, France
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 flex items-center gap-2">
-                  <Clock className="w-4 h-4" /> HORAIRES
-                </h4>
-                <ul className="text-foreground font-medium text-lg space-y-2">
-                  <li className="flex justify-between w-full max-w-[280px]"><span>Lun - Dim</span><span>10:00 - 22:00</span></li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* WhatsApp Booking */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 flex flex-col justify-center"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
-              Réservation
-            </p>
-            <h3 className="text-3xl md:text-4xl font-sans font-bold tracking-tighter uppercase text-foreground mb-6 leading-tight">
-              RÉSERVEZ EN UN MESSAGE
-            </h3>
-            <p className="text-muted-foreground text-lg font-medium mb-10 max-w-sm leading-relaxed">
-              Contactez-nous directement sur WhatsApp pour réserver votre créneau. Réponse rapide garantie.
-            </p>
-
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 self-start bg-[#25D366] text-white font-bold uppercase tracking-widest text-sm px-10 py-6 rounded-full hover:bg-[#1ebe5d] transition-colors duration-300 shadow-lg shadow-[#25D366]/20"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Réserver sur WhatsApp
-            </a>
-
-            <p className="mt-6 text-xs text-muted-foreground uppercase tracking-widest">
-              Disponible 7j/7 — Réponse sous 1h
-            </p>
-          </motion.div>
-
+      {/* Top strip — label */}
+      <div className="border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-6 flex items-center justify-between">
+          <span className="text-xs font-bold tracking-[0.3em] uppercase text-muted-foreground">Contact & Réservation</span>
+          <span className="text-xs font-bold tracking-[0.3em] uppercase text-muted-foreground">El Jadida, Maroc</span>
         </div>
       </div>
+
+      {/* Main block */}
+      <div className="bg-foreground text-background">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-28">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+
+            {/* Left — heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex-1"
+            >
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-sans font-bold tracking-tighter uppercase leading-[0.9] text-background">
+                Venez nous<br />voir.
+              </h2>
+              <p className="mt-8 text-background/60 text-base max-w-sm leading-relaxed">
+                Réservez votre créneau en un message WhatsApp. Notre équipe vous répond rapidement.
+              </p>
+            </motion.div>
+
+            {/* Right — info + CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="flex-1 flex flex-col gap-10"
+            >
+              {/* Info rows */}
+              <div className="divide-y divide-background/10">
+                {info.map(({ icon: Icon, label, value, href }) => (
+                  <div key={label} className="flex items-center justify-between py-5 gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-9 h-9 rounded-full border border-background/20 flex items-center justify-center flex-shrink-0">
+                        <Icon size={15} className="text-background/70" />
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-background/50">{label}</span>
+                    </div>
+                    {href ? (
+                      <a href={href} className="text-background font-semibold text-sm md:text-base hover:text-primary transition-colors text-right">
+                        {value}
+                      </a>
+                    ) : (
+                      <span className="text-background font-semibold text-sm md:text-base text-right">{value}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* WhatsApp CTA */}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-between w-full bg-[#25D366] text-white rounded-2xl px-8 py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#25D366]/30"
+              >
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70 mb-1">Réserver maintenant</p>
+                  <p className="text-xl font-bold tracking-tight">WhatsApp · +212 6 81 03 20 37</p>
+                </div>
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                  <MessageCircle size={22} />
+                </div>
+              </a>
+
+              <p className="text-xs text-background/40 uppercase tracking-widest text-center">
+                Disponible 7j/7 — Réponse sous 1h
+              </p>
+            </motion.div>
+
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }
