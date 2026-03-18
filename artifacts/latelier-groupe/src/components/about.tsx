@@ -1,61 +1,82 @@
 import { motion } from "framer-motion";
 
+const stats = [
+  { value: "15+", label: "Années\nd'expertise" },
+  { value: "5k+", label: "Clients\nsatisfaits" },
+  { value: "7j/7", label: "Ouvert\ntous les jours" },
+];
+
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-secondary relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          
-          {/* Text Content */}
-          <motion.div 
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex-1 space-y-12 lg:py-10"
-          >
-            <div>
-              <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-tighter text-foreground uppercase leading-[0.9]">
-                Le meilleur salon de beauté à El Jadida
-              </h2>
-            </div>
+    <section id="about" className="bg-background overflow-hidden">
 
-            <div className="space-y-6 text-foreground font-sans font-medium text-base md:text-lg leading-relaxed max-w-xl">
-              <p>
-                Chez L'Atelier Groupe à El Jadida, nous croyons que chaque individu possède une beauté unique qui ne demande qu'à être révélée. Fondé sur l'exigence et le raffinement, notre salon coiffure et spa est un véritable havre de paix au cœur d'El Jadida.
-              </p>
-              <p className="text-muted-foreground">
-                Nos experts en coiffure homme, coiffure femme, hammam et massage à El Jadida, constamment formés aux dernières techniques, vous offrent une écoute attentive et des conseils personnalisés. Le meilleur coiffeur et spa d'El Jadida, ouvert 7j/7.
-              </p>
-            </div>
+      {/* Top label bar */}
+      <div className="border-t border-b border-border">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-5 flex items-center justify-between">
+          <span className="text-xs font-bold tracking-[0.3em] uppercase text-muted-foreground">À Propos</span>
+          <span className="text-xs font-bold tracking-[0.3em] uppercase text-muted-foreground">El Jadida, Maroc</span>
+        </div>
+      </div>
 
-            {/* Stats */}
-            <div className="flex gap-12 pt-8">
-              <div>
-                <h4 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter text-foreground mb-2">15<span className="text-primary">+</span></h4>
-                <p className="text-xs text-muted-foreground font-bold uppercase tracking-[0.15em]">Années<br/>d'expertise</p>
-              </div>
-              <div>
-                <h4 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter text-foreground mb-2">5<span className="text-primary">k</span></h4>
-                <p className="text-xs text-muted-foreground font-bold uppercase tracking-[0.15em]">Clients<br/>satisfaits</p>
-              </div>
-            </div>
-          </motion.div>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-          {/* Image */}
+          {/* Image — left */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="flex-1 w-full lg:max-w-lg mx-auto pt-10 lg:pt-0"
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="order-2 lg:order-1"
           >
-            <div className="aspect-[3/4] w-full overflow-hidden shadow-2xl rounded-lg">
+            <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl">
               <img
                 src={`${import.meta.env.BASE_URL}images/photo-2.jpg`}
                 alt="Façade du salon L'Atelier Groupe à El Jadida"
                 className="w-full h-full object-cover"
               />
+              {/* Floating tag */}
+              <div className="absolute bottom-6 left-6 bg-background/90 backdrop-blur-sm rounded-xl px-5 py-3 shadow-lg">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Depuis</p>
+                <p className="text-2xl font-bold tracking-tight text-foreground">2010</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Text — right */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+            className="order-1 lg:order-2 flex flex-col gap-10"
+          >
+            <div>
+              <p className="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-6">Notre histoire</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tighter text-foreground leading-[0.95] uppercase">
+                Le meilleur salon de beauté à El&nbsp;Jadida
+              </h2>
+            </div>
+
+            <div className="space-y-5 text-muted-foreground text-base leading-relaxed max-w-lg">
+              <p>
+                Chez L'Atelier Groupe à El Jadida, nous croyons que chaque individu possède une beauté unique qui ne demande qu'à être révélée. Fondé sur l'exigence et le raffinement, notre salon est un véritable havre de paix.
+              </p>
+              <p>
+                Nos experts en coiffure homme, coiffure femme, hammam et massage à El Jadida vous offrent une écoute attentive et des conseils personnalisés — ouverts 7j/7.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 pt-4">
+              {stats.map((s) => (
+                <div key={s.value} className="border border-border rounded-xl p-5">
+                  <p className="text-3xl md:text-4xl font-bold tracking-tighter text-foreground">{s.value}</p>
+                  <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground whitespace-pre-line leading-snug">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.div>
 
