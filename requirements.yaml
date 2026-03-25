@@ -1,0 +1,16 @@
+packages:
+  "framer-motion": "For premium smooth scroll animations and micro-interactions"
+  "@hookform/resolvers": "For Zod form validation in the contact section"
+
+images:
+  - path: "artifacts/latelier-groupe/public/images/hero-bg.png"
+    description: "Luxury modern hair salon and spa interior, high-end editorial photography, warm ambient lighting, gold accents, elegant mirrors, highly detailed, photorealistic."
+    aspect_ratio: "16:9"
+  - path: "artifacts/latelier-groupe/public/images/about-spa.png"
+    description: "Aesthetically pleasing detail shot of a spa wellness setting with massage oils, smooth stones, and clean folded white towels on a dark wooden table, luxury editorial style, warm soft lighting."
+    aspect_ratio: "3:4"
+
+notes:
+  - Expects standard shadcn UI components in src/components/ui/
+  - Single-page application using anchor links for scrolling
+  - Form posts to /api/contact using the @workspace/api-client-react hook useSubmitContact
